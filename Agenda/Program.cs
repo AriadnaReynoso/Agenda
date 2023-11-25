@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace ProyectoAgenda
 {
+    // Clase principal que contiene el método de entrada (Main) para la aplicación de la agenda de contactos.
+    // Permite interactuar con la agenda a través de un menú en la consola.
     class Program
     {
-        static ControlAgenda control = new ControlAgenda(new Agenda());
+        static ControlAgenda control = new ControlAgenda(new Agenda()); // Instancia del controlador de la agenda
 
+        // Muestra un menú interactivo en la consola para operar la agenda de contactos.
         static void Main(string[] args)
         {
             string opcion = "";
@@ -46,6 +49,7 @@ namespace ProyectoAgenda
             } while (opcion != "6");
         }
 
+        // Muestra el menú principal en la consola con las opciones disponibles para interactuar con la agenda.
         static void ImprimeMenu()
         {
             StringBuilder sb = new StringBuilder();
