@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace ProyectoAgenda
 {
+    // Documentación de la clase Contacto: Representa un contacto con nombre, teléfono y email.
     class Contacto : IComparable<Contacto>
     {
+        // Propiedades de un contacto
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
 
+        // Constructores de la clase Contacto
         public Contacto()
         {
         }
@@ -23,6 +26,7 @@ namespace ProyectoAgenda
             Email = email;
         }
 
+        // Método que ompara si dos objetos Contacto son iguales.
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -39,6 +43,7 @@ namespace ProyectoAgenda
             return string.Equals(Nombre, c.Nombre) && string.Equals(Telefono, c.Telefono);
         }
 
+        // Método que obtiene el código hash del objeto Contacto.
         public override int GetHashCode()
         {
             unchecked
@@ -49,6 +54,7 @@ namespace ProyectoAgenda
             }
         }
 
+        // Método que devuelve una representación en cadena del objeto Contacto.
         public override string ToString()
         {
             return string.Format("Nombre: {0}\nTeléfono: {1}\nEmail: {2}\n", Nombre, Telefono, Email);

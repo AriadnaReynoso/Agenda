@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace ProyectoAgenda
 {
+    // Documentación de la clase Agenda: Maneja la lista de contactos.
     class Agenda
     {
+        // Tamaño máximo de la agenda
         private const int TAM = 10;
         private Contacto[] _contactos;
-        private int _index;
+        private int _index; // Índice actual de contactos en la agenda
 
+        // Propiedad para obtener el número de contactos actualmente en la agenda
         public int NumContactos
         {
             get
@@ -20,12 +23,15 @@ namespace ProyectoAgenda
             }
         }
 
+        // Constructor de la clase Agenda
+        // Inicializa la agenda con un tamaño predeterminado.
         public Agenda()
         {
             _index = 0;
             _contactos = new Contacto[TAM];
         }
 
+        // Método para agregar un contacto a la agenda
         public void AgregarContacto(Contacto contacto)
         {
             if (_index < TAM)
@@ -39,6 +45,7 @@ namespace ProyectoAgenda
             }
         }
 
+        // Método para borrar el último contacto de la agenda
         public void BorrarUltimoContacto()
         {
             if (_index > 0)
@@ -52,6 +59,7 @@ namespace ProyectoAgenda
             }
         }
 
+        // Método para verificar la existencia de contactos de la agenda
         private bool NoHayContactos()
         {
             if(_index == 0)
@@ -63,6 +71,7 @@ namespace ProyectoAgenda
             return false;
         }
 
+        // Método para mostrar los contactos de forma ordenada la agenda
         public void MostrarOrdenados()
         {
             if (NoHayContactos()) { return; }
@@ -74,6 +83,7 @@ namespace ProyectoAgenda
             Console.WriteLine(CadenaContactos(ordenados));
         }
 
+        // Método para mostrar los contactos de forma descente de la agenda
         public void MostrarOrdenadosDesc()
         {
             if (NoHayContactos()) { return; }
@@ -86,6 +96,7 @@ namespace ProyectoAgenda
             Console.WriteLine(CadenaContactos(ordenados)); 
         }
 
+        // Método para buscar los contactos por nombre en la agenda
         public Contacto BuscarPorNombre(string nombre)
         {
             foreach (Contacto contacto in _contactos)
@@ -99,6 +110,7 @@ namespace ProyectoAgenda
             return null;
         }
 
+        // Método para mostrar los contactos de la agenda
         public void MostrarContactos()
         {
             Console.WriteLine(this);
